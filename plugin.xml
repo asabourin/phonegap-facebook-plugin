@@ -29,9 +29,6 @@
       <access origin="https://*.akamaihd.net" />
     </config-file>
     
-    <preference name="APP_ID" />
-	  <preference name="APP_NAME" />
-    
     <engines>
       <engine name="cordova" version=">=2.3.0" />
     </engines>
@@ -39,8 +36,10 @@
     <!-- android -->
     <platform name="android">
 
-        <config-file target="res/xml/config.xml" parent="plugins">
-            <plugin name="org.apache.cordova.facebook.Connect" value="org.apache.cordova.facebook.ConnectPlugin"/>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FacebookConnect" >
+                <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin"/>
+            </feature>
         </config-file>
         
         <!-- res files -->
